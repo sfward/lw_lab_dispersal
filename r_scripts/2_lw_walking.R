@@ -116,15 +116,14 @@ summ_stats_lw <- results_lw %>%
     time_sec = max(time_sec_w_NA, na.rm = TRUE),
     time_min = time_sec/60,
     total_distance_m_per_minute = total_distance_m / ( max(time_min, na.rm = TRUE) ),
-    correction_ratio <- 300/max(time_sec, na.rm = TRUE) ,
+    correction_ratio = 300/max(time_sec, na.rm = TRUE) ,
     total_distance_m_per_5minute = total_distance_m * (300/max(time_sec, na.rm = TRUE) )
     
   )
 
-View(summ_stats_lw)
-
-
 summary(summ_stats_lw)
+summary(summ_stats_lw$total_distance_m_per_minute)
+t.test(summ_stats_lw$total_distance_m_per_minute)
 summary(summ_stats_lw$total_distance_m_per_5minute)
 t.test(summ_stats_lw$total_distance_m_per_5minute)
 
