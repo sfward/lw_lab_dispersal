@@ -89,7 +89,7 @@ p_6hr_sim <- ggplot(move_df, aes(x = dist_m_6hr_sim)) +
   ylab("Percent")+
   xlab("Dispersal (m)")+
   theme_classic()+
-  ggtitle('C. <6 hr (simulated)')
+  ggtitle('C. <6 hrs (simulated)')
 
 p_12hr_sim <- ggplot(move_df, aes(x = dist_m_12hr_sim)) + 
   geom_histogram(aes(y = after_stat(count / sum(count))), bins = bins_n, color="black",fill=my_colors_gp[3]) +
@@ -97,9 +97,9 @@ p_12hr_sim <- ggplot(move_df, aes(x = dist_m_12hr_sim)) +
   ylab("")+
   xlab("Dispersal (m)")+
   theme_classic()+
-  ggtitle('D. <12 hr (simulated)')
+  ggtitle('D. <12 hrs (simulated)')
 
-
+plot(1,1)
 resize.win(6.7125984,4.5)
 (hist_raw_d_5|p_1hr_sim)/
 (p_6hr_sim|p_12hr_sim)
